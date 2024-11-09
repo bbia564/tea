@@ -11,8 +11,8 @@ class TeaCoolView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.rogahn.value
-              ? const CircularProgressIndicator(color: Colors.green)
+          () => controller.rempel.value
+              ? const CircularProgressIndicator(color: Colors.greenAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class TeaCoolView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.vdqrast();
+              controller.dylan();
             },
             icon: const Icon(
               Icons.restart_alt,

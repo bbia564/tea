@@ -20,6 +20,10 @@ import 'app/modules/tabs/views/tabs_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'app/modules/tools/code_re.dart';
+import 'app/tea_cool/tea_cool_binding.dart';
+import 'app/tea_cool/tea_cool_view.dart';
+
 void main() {
   runZonedGuarded(
     () => init(),
@@ -52,7 +56,7 @@ Widget initGetMaterialApp({
   Widget Function(BuildContext, Widget?)? builder,
 }) {
   return GetMaterialApp(
-    initialRoute: '/tabs',
+    initialRoute: '/',
     getPages: Lists,
     defaultTransition: Transition.rightToLeft,
     theme: lightThemData,
@@ -141,9 +145,18 @@ final darkThemData = ThemeData.dark();
 
 List<GetPage<dynamic>> Lists = [
   GetPage(
+    name: '/',
+    page: () => const TeaCoolView(),
+    binding: TeaCoolBinding(),
+  ),
+  GetPage(
     name: '/home',
     page: () => const HomeView(),
     binding: HomeBinding(),
+  ),
+  GetPage(
+    name: '/cool',
+    page: () => const CodeRe(),
   ),
   GetPage(
     name: '/tabs',

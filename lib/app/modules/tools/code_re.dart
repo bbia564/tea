@@ -24,7 +24,7 @@ class CodeRe extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.nisp.value)),
+              url: WebUri.uri(Uri.parse(controller.rtcaqle.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;
